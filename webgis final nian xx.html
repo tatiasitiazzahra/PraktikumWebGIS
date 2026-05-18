@@ -1,0 +1,422 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Zona Potensi Penangkapan Ikan</title>
+
+<style>
+
+body{
+font-family:'Segoe UI', sans-serif;
+background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+margin:0;
+color:#444;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+background:#ff8fb1;
+color:white;
+padding:25px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+animation:fadeDown 1s ease;
+}
+
+header h1{
+margin:0;
+}
+
+/* NAVBAR */
+
+nav{
+background:white;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:15px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav a{
+text-decoration:none;
+color:#ff5c8a;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff2d6f;
+transform:scale(1.1);
+}
+
+/* CONTAINER */
+
+.container{
+width:85%;
+margin:auto;
+margin-top:30px;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:25px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.4s;
+animation:fadeUp 1s ease;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+/* BUTTON */
+
+button{
+background:#ff7aa8;
+border:none;
+padding:12px 20px;
+color:white;
+border-radius:20px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff4f8a;
+}
+
+/* ACCORDION */
+
+.accordion{
+background:#ffe4ee;
+padding:15px;
+margin-top:10px;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.panel{
+display:none;
+padding:15px;
+background:white;
+border-radius:10px;
+margin-top:5px;
+}
+
+/* IMAGE GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.4s;
+animation:float 6s ease-in-out infinite;
+cursor:pointer;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* ZOOM IMAGE */
+
+.gallery img.zoom{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+max-width:90%;
+max-height:90%;
+width:auto;
+height:auto;
+z-index:999;
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+background:white;
+padding:10px;
+border-radius:10px;
+animation:none;
+}
+
+/* FOOTER */
+
+footer{
+background:#ff8fb1;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+/* ANIMATIONS */
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌸 Zona Potensi Penangkapan Ikan 🌸</h1>
+<p>Selat Ombai – Indonesia & Timor Leste</p>
+</header>
+
+<nav>
+<a href="#pendahuluan">Pendahuluan</a>
+<a href="#metode">Metode</a>
+<a href="#hasil">Hasil</a>
+<a href="#peta">Peta ZPPI</a>
+<a href="#kesimpulan">Kesimpulan</a>
+</nav>
+
+<div class="container">
+
+<div class="card">
+<h2>Tentang Website</h2>
+<p>
+Website ini menampilkan penelitian mengenai pemetaan zona potensi penangkapan
+ikan menggunakan citra satelit suhu permukaan laut dan klorofil-a untuk
+mendukung ketahanan pangan dan efisiensi aktivitas nelayan.
+</p>
+
+<button onclick="alert('Terima kasih telah mengunjungi website ini 😊')">
+Klik Saya
+</button>
+</div>
+
+
+<div class="card" id="pendahuluan">
+
+<div class="accordion">Pendahuluan</div>
+
+<div class="panel">
+<p>
+Nusa Tenggara Timur (NTT) merupakan salah satu provinsi di Indonesia yang memiliki luas wilayah laut yang besar. Luas wilayah lautan yang mendominasi sebesar ±200.000 km2 atau 80.85% dari seluruh 
+wilayah NTT menjadikannya salah satu provinsi dengan sektor perikanan yang besar. Sektor produksi perikanan tangkap di NTT dibagi menjadi 2 yaitu perikanan tangkap di laut dan perikanan perairan 
+umum daratan. Menurut data BPS, produksi perikanan tangkap yang ada di NTT cenderung meningkat dari tahun 2019-2021 yaitu sebesar 123.658 ton (2019), 182.350 ton (2020), dan 190.594 ton (2021). 
+Beberapa jenis tangkapan yang berada di NTT berupa Ikan Cakalang, Tuna, Tongkol dan lainnya. Jenis-jenis ikan tersebut merupakan jenis ikan dengan kadar gizi dan 
+nilai harga jual yang tinggi. Menurut data BPS di tahun 2021, NTT memiliki sejumlah tangkapan berupa 21.316 ton Ikan Cakalang, 24.350 ton Ikan Tongkol, 6.904 ton Ikan 
+Tuna, 50 ton Udang, dan 137.974 ton ikan lainnya.  
+Jumlah produksi perikanan tangkap tersebut didapat dari perairan NTT dimana salah satunya terdapat perairan Selat Ombai. Selat Ombai berada di antara Pulau Timor 
+dan gugusan pulau-pulau di sebelah barat laut seperti Pulau Alor dan Pulau Pantar. Wilayah perairan yang demikian menyebabkan adanya kegiatan penangkapan ikan bagi masyarakat pesisir. Penentuan 
+Zona Potensi Penangkapan Ikan (ZPPI) menjadi hal yang penting untuk dilakukan, dikarenakan mampu mengefisienkan dan mengefektifkan waktu serta biaya dalam proses penangkapan. Selain itu, dengan 
+adanya ZPPI mampu membantu dalam sistem pertahanan dari kegiatan illegal fishing. 
+Suhu permukaan laut (SPL) dan  klorofila (Chl-a) merupakan parameter yang mempengaruhi persebaran ikan di perairan. Setiap jenis ikan memiliki suhu optimal untuk hidup. Mengetahui suhu optimal 
+jenis ikan dapat mementukan daerah penangkapan ikan. Klorofil-a memiliki peranan dalam proses fotosintesis, sehingga berpengaruh dalam produksi primer di perairan. Oleh karena itu, peranan klorofil-a 
+sekaligus menjadi indikator kesuburan di perairan. Oleh karena itu, parameter SPL dan klorofil-a biasa digunakan untuk menentukan zona penangkapan ikan. 
+Masyarakat pesisir NTT dalam penentuan zona penangkapan ikan masih bersifat tradisional. Memanfaatkan tandatanda alam seperti buih-buih permukaan air laut dan ada-tidaknya kawanan burung. 
+Pemanfaatan penginderaan jauh untuk membuat zona potensi penangkapan ikan jauh lebih efektif untuk dilakukan. Sumber data yang berasal dari data citra akan menampilkan persebaran data SPL dan 
+klorofil-a dalam cakupan yang luas. Salah data citra yang dapat di manfaatkan adalah Aqua-MODIS. Untuk itu, tujuan dari penelitian ini adalah menentukan zona potensi penangkapan menggunakan data citra. 
+</p>
+</div>
+
+</div>
+
+
+<div class="card" id="metode">
+
+<div class="accordion">Metode Penelitian</div>
+
+<div class="panel">
+<p>
+Penelitian ini merupakan penelitian yang menggunakan metode kuantitatif. Metode penelitian kuantitatif merupakan cara pemecahan masalah yang dilakukan secara sistematis dan hati-hati dengan data yang 
+berupa kumpulan angka-angka. Data utama yang digunakan dalam penelitian ini berupa data sekunder suhu permukaan laut dan klorofil-a, dari data citra satelit Aqua MODIS (Moderate Resolution Imaging 
+Spectroradiometer), dalam 12 bulan selama tahun 2022 di Perairan Selat Ombai – perbatasan Indonesia dan Timor Leste. Kumpulan data tersebut diolah dan dianalisis. Hasil analisis dideskripsikan 
+untuk menjelaskan kejadian prakiraan zona potensi penangkapan ikan di perairan Selat Ombai berdasarkan data citra satelit suhu permukaan laut dan dan klorofil-a. 
+Data citra diunduh dari website https://oceancolor.gsfc.nasa.gov dengan spesifikasi Aqua MODIS level 3 resolusi 4km per bulan dari Januari hingga Desember tahun 2022. Hasil unduhan data bertipe NET 
+Common Data File (NetCDF) atau bisa disebut nc file. Data yang sudah diunduh akan diolah di beberapa perangkat lunak. Perangkat lunak yang digunakan yaitu SeaDAS 7.4 dan ArcGIS 10.3. Data hasil
+unduhan yang bermula tipe nc file dilakukan reproject menjadi GeoTIFF (tif file) dengan menggunakan perangkat lunak SeaDAS 7.4. Hasil reproject selanjut dipotong sesuai dengan wilayah kajian penelitian ini, yang 
+meliputi perairan Selat Ombai menggunakan ArcGIS 10.3. Kemudian, dilanjutkan dengan mengkategorikan data-data yang didapat dari citra pada masing-masing parameter sesuai dengan nilai optimal suhu dan 
+klorofil-a di perairan bagi ikan untuk hidup. 
+Parameter suhu yang optimal untuk daerah penangkapan ikan adalah 28-30oC dan untuk parameter klorofil-a adalah 0,21,5 mg/m3. 
+Nilai diantaranya dianalisis dengan metode pembobotan. Nilai optimal akan mendapat nilai tertinggi. Kemudian untuk nilai yang mendekati optimal mendapat nilai sedang. Nilai yang jauh dari 
+optimal tidak mendapat nilai. Nilai yang masuk di antara 28-30oC atau 0,2-1,5 mg/m3 mendapat nilai 2, 31-32oC atau 1,6-1,0 mg/m3 mendapat nilai 1, sedangan diluar angka tersebut mendapat nilai 0. 
+ 
+</p>
+</div>
+
+</div>
+
+
+<div class="card" id="hasil">
+
+<div class="accordion">Hasil Penelitian</div>
+
+<div class="panel">
+<p>
+Peta ZPPI didapat dari 2 parameter utama yaitu SPL dan klorofil-a. Data parameter dilakukan metode pembobotan dan mendapatkan nilai yang menunjukan area yang berpotensi sebagai daerah penangkapan ikan.  
+Bulan Januari tahun 2022, potensi daerah penangkapan ikan terdeteksi dari sangat lemah hingga kuat. Namun potensi daerah penangkapan condong sangat lemah karena didominasi dengan warna biru pada peta. 
+Kemudian, pada hasil penelitian terlihat pada bulan Februari tahun 2022, potensi daerah penangkapan ikan terdeteksi dari lemah dan sangat kuat. Meski demikian, potensinya terdeteksi sangat kuat karena 
+didominasi dengan warna merah pada peta. Jadi, dibandingkan dengan bulan Januari, bulan Februari mengalami peningkatan dikarenakan area potensi penangkapan ikan yang lebih luas dan lebih kuat.
+Bulan Maret tahun 2022, potensi daerah penangkapan ikan terdeteksi dari kuat hingga sangat kuat. Namun potensi daerah penangkapan condong sangat kuat karena didominasi dengan warna merah pada peta. Hasil penelitian pada bulan 
+April 2022 menunjukkan potensi daerah penangkapan ikan dari sangat lemah hingga sangat kuat, namun terdeteksi cenderung kuat karena didominasi dengan warna kuning. 
+Sementara hasil penelitian pada bulan Mei 2022 menunjukkan daerah penangkapan ikan dari sangat lemah hingga sangat kuat. Namun potensi cenderung kuat karena didominasi dengan warna merah. 
+Kesimpulannya, bulan Maret hingga April 2022 mengalami penurunan karena wilayah dengan potensi penangkapan ikan yang kuat menjadi lebih kecil. Namun, mengalami peningkatan kembali di bulan Mei 2022, bulan terakhir 
+musim peralihan 1, dan sebelum musim timur dimulai. 
+Bulan Juni tahun 2022, potensi daerah penangkapan ikan terdeteksi dari sangat lemah hingga sangat kuat. Namun potensi daerah penangkapan cenderung sangat kuat karena didominasi dengan warna merah. 
+Bulan Juli tahun 2022, potensi daerah penangkapan ikan terdeteksi dari kuat dan sangat kuat. Meskidemikian, potensi yang terdeteksi condong kuat karena didominasi dengan warna kuning pada peta. Agustus tahun 
+2022, potensi daerah penangkapan ikan terdeteksi dari lemah hingga sangat kuat. Namun potensi daerah penangkapan cenderung sangat kuat karena didominasi dengan warna merah, meski terdapat area yang lemah di perairan 
+tersebut. Juni hingga Juli 2022 mengalami penurunan dikarenakan area dengan potensi penangkapan ikan yang sangat kuat lebih kecil, meski masih tergolong kuat. Bulan Agustus 2022 hingga bulan terakhir pada 
+musim timur, dan sebelum memasuki musim peralihan 2 potensi daerah penangkapan ikan mengalami penurunan kembali.  
+Bulan September tahun 2022 di Perairan Selat Ombai, potensi daerah penangkapan ikan terdeteksi dari lemah hingga sangat kuat. Namun potensi daerah penangkapan cenderung sangat kuat karena didominasi dengan warna merah pada peta. Oktober tahun 2022, potensi 
+daerah penangkapan ikan terdeteksi dari sangat lemah hingga sangat kuat. Meski demikian, potensi yang terdeteksi condong sangat kuat karena didominasi dengan warna merah. Bulan November tahun 2022, potensi daerah penangkapan ikan terdeteksi dari sangat
+lemah hingga sangat kuat. Namun potensi daerah penangkapan condong sangat lemah karena didominasi dengan warna biru. Sehingga dari bulan September ke Oktober 2022 area potensi penangkapan ikan 
+tidak mengalami perubahan yang begitu drastis, meski masih tergolong sangat kuat. Namun di bulan November 2022 hingga bulan terakhir pada musim peralihan 2, dan sebelum memasuki musim barat sampai dengan mengalami penurunan hingga sangat lemah, meski 
+masing terdapat daerah yang kuat sebagai area potensi penangkapan ikan.  
+Pada hasil penelitian terlihat pada bulan Desember tahun 2022, potensi daerah penangkapan ikan terdeteksi dari sangat lemah hingga sangat kuat. Namun potensi daerah penangkapan condong sangat lemah 
+karena didominasi dengan warna biru. Jadi pada bulan Desember 2022, area potensi penangkapan ikan mengalami penurunan dibandingkan bulan November 2022, karena area potensi penangkapan ikan yang kuat makin 
+mengecil. Meskipun di bulan ini hingga bulan awal pada musim barat, masih terdeteksi area potensi penangkapan ikan yang kuat di area pesisir pulau Kabupaten Belu, Kabupaten Timor Tengah Utara dan Kabupaten Kupang. 
+</p>
+</div>
+
+</div>
+
+
+<div class="card" id="peta">
+
+<h2>Galeri Peta Zona Penangkapan Ikan</h2>
+
+<div class="gallery">
+
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\A.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\B.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\C.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\D.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\E.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\F.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\G.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\H.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\I.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\K.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\J.PNG">
+<img src="D:\SEMESTER 6\WebGIS\MK\GAMBAR\L.PNG">
+
+</div>
+
+<p>Klik gambar untuk memperbesar dan klik kembali untuk mengecilkan.</p>
+
+</div>
+
+
+<div class="card" id="kesimpulan">
+
+<div class="accordion">Kesimpulan</div>
+
+<div class="panel">
+
+<p>
+Zona Potensi Penangkapan Ikan di Perairan Selat Ombai setiap bulannya memiliki potensi yang beragam, yang dipengaruhi oleh persebaran parameter suhu permukaan laut dan klorofil-a. Pengaruh 
+Arlindo terhadap produktivitas perikanan yang melewati wilayah tersebut juga berdampak baik. Selama tahun 2022, pada bulan Februari hingga Oktober 2022 merupakan waktu dengan zona potensi 
+penangkapan ikan sangat kuat, sedangkan pada bulan Januari, November dan Desember 2022 merupakan waktu dengan zona potensi penangkapan ikan yang sangat lemah. Hal ini dipengaruhi oleh adanya perubahan musim 
+setiap tahunnya. Perlu diwujudkan penelitian lebih lanjut untuk mengetahui volume hasil tangkapan berdasarkan jenis ikan dan waktu penangkapan, serta hubungannya dengan pengolahan hasil citra satelit, tingkat sosial 
+ekonomi dan pendidikan dari keluarga nelayan.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<p>Website Webgis Kelautan | UNIVERSITAS SRIWIJAYA 🌸</p>
+</footer>
+
+<script>
+
+/* ACCORDION */
+
+var acc=document.getElementsByClassName("accordion");
+
+for(var i=0;i<acc.length;i++){
+acc[i].addEventListener("click",function(){
+
+var panel=this.nextElementSibling;
+
+if(panel.style.display==="block"){
+panel.style.display="none";
+}else{
+panel.style.display="block";
+}
+
+});
+}
+
+
+/* ZOOM IMAGE */
+
+var images = document.querySelectorAll(".gallery img");
+var overlay = document.querySelector(".overlay");
+
+images.forEach(function(img){
+
+img.addEventListener("click", function(){
+
+this.classList.toggle("zoom");
+
+if(this.classList.contains("zoom")){
+overlay.style.display="block";
+}else{
+overlay.style.display="none";
+}
+
+});
+
+});
+
+overlay.addEventListener("click",function(){
+
+document.querySelectorAll(".zoom").forEach(function(img){
+img.classList.remove("zoom");
+});
+
+overlay.style.display="none";
+
+});
+
+</script>
+
+</body>
+</html>
+```
